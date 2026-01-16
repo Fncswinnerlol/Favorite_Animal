@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<style>
+p {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+button {
+  margin:auto;
+  display:block;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+body {
+  background-color: #3f0000;
+  color: white;
+}
+
+/* IMAGE FADE */
+.fade-image {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+.fade-image.is-hidden {
+  opacity: 0;
+}
+</style>
+
+<body>
+
+<h2>HEY HEY HEYYYYY, today we will be looking at....</h2>
+
+<p>A Wild Pibble</p>
+
+<button onclick="document.getElementById('fadeImg').src='image-3.png'">OG Pibble</button>
+
+<img id="fadeImg" class="fade-image" src="ab67616d00001e0249ba6189a9828ee98a8f87c9.jpg" style="width:500px">
+
+<button onclick="document.getElementById('fadeImg').src='images.jpg'">Washington</button>
+
+<h2>We got 3 buttons... i think one of them shows pibble:3</h2>
+
+<p id="demo">I AM PIBBLE, WASH MY BELLAYYY</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">1</button>
+<button type="button" onclick="document.getElementById('demo').style.display='none'">2</button>
+<button type="button" onclick="document.getElementById('demo').style.display='block'">3</button>
+
+<h2>welll that last one didnt work....sadly no pibble</h2>
+
+<button type="button" onclick="fadeToNextImage()">PIBBLIFYYY!!</button>
+
+<button type="button" onclick="fadeToNextImage()">DEPIBBLIFY :( </button>
+
+<h2>Wanna know a secret???</h2>
+
+<p>dont hate me btw</p>
+
+<p id="demo3" style="display:none">PIBBLE IS ALL MINESS:3</p>
+
+<button type="button" onclick="document.getElementById('demo3').style.display='block'">click me!</button>
+
+<script>
+/* ONLY NEW PLACEHOLDERS — NOT THE EXISTING IMAGES */
+let images = [
+  "pibble hand.png",  // ← replace with your new image later
+  "no pibble.png"   // ← replace with your new image later
+];
+
+let currentIndex = 0;
+
+function fadeToNextImage() {
+  const img = document.getElementById("fadeImg");
+
+  img.classList.add("is-hidden");
+
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % images.length;
+    img.src = images[currentIndex];
+    img.classList.remove("is-hidden");
+  }, 1000);
+}
+</script>
+
+</body>
+</html>
+
